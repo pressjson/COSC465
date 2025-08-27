@@ -18,7 +18,5 @@ int main(int argc, char *argv[]) {
   /* } */
   sleep(n);
   /* fprintf(1, "Slept for %d ticks\n", n); */
-
-
   exit(0);
 }

@@ -3,9 +3,15 @@
 
 This is my solution for COSC 465. This class uses [[https://github.com/mit-pdos/xv6-riscv][Xv6]]. These are my solutions.
 
+The file ~README~ is required to ~make qemu~. Thus, before building for the first time, run
+
+#+begin_src shell
+ln -s README.org README
+#+end_src
+
 From the original project:
 
-#+begin_src txt
+,#+begin_src txt
 
 xv6 is a re-implementation of Dennis Ritchie's and Ken Thompson's Unix
 Version 6 (v6).  xv6 loosely follows the structure and style of v6,
