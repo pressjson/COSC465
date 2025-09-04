@@ -141,6 +141,8 @@ UPROGS=\
 	$U/_zombie\
         $U/_forking\
         $U/_sleep\
+	$U/_redirect\
+	$U/_pingpong\
 
 fs.img: mkfs/mkfs README $(UPROGS)
 	mkfs/mkfs fs.img README $(UPROGS)
