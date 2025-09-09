@@ -143,6 +143,9 @@ UPROGS=\
         $U/_sleep\
 	$U/_redirect\
 	$U/_pingpong\
+	$U/_zombie\
+	$U/_hello\
+	$U/_trace\
 
 fs.img: mkfs/mkfs README $(UPROGS)
 	mkfs/mkfs fs.img README $(UPROGS)

@@ -16,9 +16,9 @@ int main(void) {
     /* sleep(10); */
     char received[1];
     int cc = read(fds[0], received, 1);
-    /* if(cc != 1) { */
-    /*   printf("child: read error %d!\n", cc); */
-    /* } */
+    if(cc != 1) {
+      printf("child: read error %d!\n", cc);
+    }
     if (received[0]) {
       /* printf("%d: received ping %c\n", getpid(), received[0]); */
       printf("%d: received ping\n", getpid());
@@ -33,9 +33,9 @@ int main(void) {
     // parent
     char send[1] = {'c'};
     int cc = write(fds[1], send, 1);
-    /* if(cc != 1) { */
-    /*   printf("parent: write error! %d\n", cc); */
-    /* } */
+    if(cc != 1) {
+      printf("parent: write error! %d\n", cc);
+    }
     wait(&pid);
 
     char received[1];

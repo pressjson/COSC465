@@ -87,6 +87,8 @@ myproc(void)
   struct proc *p = c->proc;
   pop_off();
   return p;
+  // returns a pointer to the current process
+  // myproc()->magic is the magic variable of the current process
 }
 
 int
@@ -106,6 +108,7 @@ allocpid()
 // If found, initialize state required to run in the kernel,
 // and return with p->lock held.
 // If there are no free procs, or a memory allocation fails, return 0.
+// Called by fork
 static struct proc*
 allocproc(void)
 {
@@ -124,6 +127,7 @@ allocproc(void)
 found:
   p->pid = allocpid();
   p->state = USED;
+  p->magic = 42;
 
   // Allocate a trapframe page.
   if((p->trapframe = (struct trapframe *)kalloc()) == 0){

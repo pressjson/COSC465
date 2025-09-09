@@ -98,3 +98,20 @@ sys_uptime(void)
   release(&tickslock);
   return xticks;
 }
+
+// *my* syscalls
+
+uint64
+sys_hello(void)
+{
+  printf("Hello!\n");
+  printf("My magic number is %d!\n", myproc()->magic);
+  return 0;
+}
+
+uint64
+sys_trace(void)
+{
+  printf("kernel/sysproc.c: trace not implemented\n");
+  return -1;
+}
