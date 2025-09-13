@@ -112,6 +112,8 @@ sys_hello(void)
 uint64
 sys_trace(void)
 {
-  printf("kernel/sysproc.c: trace not implemented\n");
-  return -1;
+  int mask;
+  argint(0, &mask);
+  myproc()->trace_mask = mask;
+  return 0;
 }
