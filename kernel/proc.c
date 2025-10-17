@@ -128,6 +128,7 @@ found:
   p->pid = allocpid();
   p->state = USED;
   p->magic = 42;
+  p->tickets = 1;
 
   // Allocate a trapframe page.
   if((p->trapframe = (struct trapframe *)kalloc()) == 0){
@@ -298,7 +299,10 @@ fork(void)
 
   acquire(&np->lock);
   np->state = RUNNABLE;
+  // my edits for my syscalls (A5, A7)
   np->trace_mask = p->trace_mask;
+  np->tickets = p->tickets;
+
   release(&np->lock);
 
   return pid;

@@ -38,3 +38,5 @@ entry("sleep");
 entry("uptime");
 entry("hello");
 entry("trace");
+entry("settickets");
+entry("tickets");
